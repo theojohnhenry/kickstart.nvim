@@ -11,13 +11,17 @@ return {
   },
   cmd = 'Neotree',
   keys = {
-    { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
+    -- Normal mode binding
+    { '<C-e>', ':Neotree reveal<CR>', mode = 'n', desc = 'NeoTree reveal', silent = true },
+    -- Insert mode binding
+    { '<C-e>', '<Esc>:Neotree reveal<CR>', mode = 'i', desc = 'NeoTree reveal', silent = true },
   },
   opts = {
     filesystem = {
       window = {
+        position = 'right',
         mappings = {
-          ['\\'] = 'close_window',
+          ['<C-e>'] = 'close_window',
         },
       },
     },
